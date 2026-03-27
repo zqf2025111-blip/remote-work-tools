@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoteToolkit - The Ultimate Directory of Remote Work Tools</title>
+    <meta name="description" content="Discover the best remote work tools for video conferencing, project management, team chat, and more. A curated list of 30+ essential tools for remote productivity.">
+    <meta name="keywords" content="remote work tools, project management, video conferencing, team chat, time tracking, VPN, productivity directory">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="RemoteToolkit - The Ultimate Directory of Remote Work Tools">
+    <meta property="og:description" content="Discover the best remote work tools for video conferencing, project management, team chat, and more.">
+    <meta property="og:url" content="https://zqf2025111-blip.github.io/remote-tools/">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://zqf2025111-blip.github.io/remote-tools/">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border-color: #334155;
+            --tag-free: #22c55e;
+            --tag-paid: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Ad Slots */
+        .ad-slot {
+            background: #1a2234;
+            border: 1px dashed #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-size: 0.8rem;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ad-top {
+            width: 100%;
+            height: 90px;
+        }
+
+        .ad-sidebar {
+            width: 100%;
+            height: 600px;
+            margin-top: 0;
+        }
+
+        .ad-inline {
+            width: 100%;
+            height: 150px;
+            grid-column: 1 / -1;
+        }
+
+        /* Search and Filter */
+        .controls {
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            border-color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card */
+        .tool-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .tool-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .tool-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .tool-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .price-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .price-tag.free {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--tag-free);
+        }
+
+        .price-tag.paid {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--tag-paid);
+        }
+
+        .visit-btn {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .visit-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .affiliate-disclosure {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.4;
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .ad-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>RemoteToolkit</h1>
+            <p>The curated directory of essential tools for the modern remote professional. Boost your productivity, stay connected, and work better from anywhere.</p>
+        </header>
+
+        <div class="ad-slot ad-top">
+            Google AdSense - Top Banner [728x90]
+        </div>
+
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for tools, categories, or features...">
+            </div>
+            <div class="filters" id="filterContainer">
+                <button class="filter-btn active" data-category="all">All Tools</button>
+                <button class="filter-btn" data-category="Video Conferencing">Video Conferencing</button>
+                <button class="filter-btn" data-category="Team Chat">Team Chat</button>
+                <button class="filter-btn" data-category="Project Management">Project Management</button>
+                <button class="filter-btn" data-category="Time Tracking">Time Tracking</button>
+                <button class="filter-btn" data-category="Screen Sharing">Screen Sharing</button>
+                <button class="filter-btn" data-category="Cloud Storage">Cloud Storage</button>
+                <button class="filter-btn" data-category="Virtual Whiteboard">Virtual Whiteboard</button>
+                <button class="filter-btn" data-category="VPN & Security">VPN & Security</button>
+            </div>
+        </section>
+
+        <main class="main-layout">
+            <div class="content-area">
+                <div class="tools-grid" id="toolsGrid">
+                    <!-- Tools will be injected here by JS -->
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="ad-slot ad-sidebar">
+                    Google AdSense - Sidebar [300x600]
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 RemoteToolkit. All rights reserved.</p>
+            <div class="affiliate-disclosure">
+                Affiliate Disclosure: RemoteToolkit is a participant in various affiliate marketing programs, which means we may get paid commissions on editorially chosen products purchased through our links to retailer sites. This helps us keep the site free and updated for our global community of remote workers.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const tools = [
+            {
+                name: "Zoom",
+                category: "Video Conferencing",
+                icon: "🎥",
+                description: "Zoom provides a comprehensive cloud-based platform for video and audio conferencing, online meetings, and mobile collaboration. It features high-quality video, screen sharing, and recording capabilities that enable remote teams to communicate effectively from any location. With its user-friendly interface and robust security features, Zoom has become a standard for businesses and individuals looking to maintain personal connections and professional productivity.",
+                free: true,
+                url: "https://zoom.us"
+            },
+            {
+                name: "Slack",
+                category: "Team Chat",
+                icon: "💬",
+                description: "Slack is a messaging app for business that connects people to the information they need by bringing people together to work as one unified team. It organizes conversations into channels, making it easy to follow projects and topics without getting lost in long email threads. With powerful integrations, file sharing, and voice/video calls, Slack streamlines workflow and fosters a collaborative culture for remote organizations of all sizes.",
+                free: true,
+                url: "https://slack.com"
+            },
+            {
+                name: "Notion",
+                category: "Project Management",
+                icon: "📝",
+                description: "Notion is an all-in-one workspace that combines notes, tasks, wikis, and databases into a single highly customizable platform. It allows remote teams to create their own systems for project management, documentation, and internal communication, ensuring that all vital information is organized and accessible. Its versatile building blocks make it easy to adapt the workspace to any workflow, making it a favorite for startups and creative teams worldwide.",
+                free: true,
+                url: "https://notion.so"
+            },
+            {
+                name: "Asana",
+                category: "Project Management",
+                icon: "📋",
+                description: "Asana is a powerful project management tool designed to help teams organize, track, and manage their work efficiently. It provides clear visibility into project timelines, individual responsibilities, and overall progress through various views like lists, boards, and timelines. By centralizing tasks and deadlines, Asana reduces confusion and ensures that remote team members stay aligned on their goals and deliver high-quality results on schedule every time.",
+                free: true,
+                url: "https://asana.com"
+            },
+            {
+                name: "Monday.com",
+                category: "Project Management",
+                icon: "📅",
+                description: "Monday.com is a versatile Work OS that empowers teams to build custom workflow applications in minutes. It offers a visual and intuitive way to manage anything from software development to marketing campaigns and sales pipelines. With its extensive automation features and integration capabilities, Monday.com helps remote teams eliminate manual work and focus on high-impact tasks, fostering a culture of transparency and accountability across the entire organization.",
+                free: false,
+                url: "https://monday.com"
+            },
+            {
+                name: "Linear",
+                category: "Project Management",
+                icon: "📈",
+                description: "Linear is a purpose-built issue tracking tool designed specifically for high-performance software teams. It emphasizes speed, efficiency, and a streamlined user experience, allowing developers and product managers to manage sprints and track progress without unnecessary overhead. Its keyboard-centric design and automated workflows help remote engineering teams stay focused on building great products while maintaining a clear overview of their development roadmap and technical debt.",
+                free: true,
+                url: "https://linear.app"
+            },
+            {
+                name: "ClickUp",
+                category: "Project Management",
+                icon: "🖱️",
+                description: "ClickUp is the 'one app to replace them all,' offering a massive suite of features including tasks, docs, goals, and chat in a single platform. It is highly flexible and caters to diverse team needs with customizable views and extensive automation options. For remote teams, ClickUp provides a unified hub for all work-related activities, reducing the need for multiple subscriptions and ensuring that everyone is working from the same data source.",
+                free: true,
+                url: "https://clickup.com"
+            },
+            {
+                name: "Toggl Track",
+                category: "Time Tracking",
+                icon: "⏱️",
+                description: "Toggl Track is a simple yet powerful time tracking tool that helps individuals and teams understand how they spend their work hours. It offers one-click timers, detailed reporting, and background tracking features that make time management effortless and accurate. For remote workers, Toggl Track provides the insights needed to optimize productivity, justify billing to clients, and maintain a healthy work-life balance by monitoring actual hours worked.",
+                free: true,
+                url: "https://toggl.com/track/"
+            },
+            {
+                name: "Clockify",
+                category: "Time Tracking",
+                icon: "🕒",
+                description: "Clockify is a popular free time tracker and timesheet app that allows teams of all sizes to track work hours across various projects. It provides a straightforward interface for logging time, managing projects, and generating professional reports for payroll or client invoicing. Remote teams benefit from its collaborative features and unlimited users on the free plan, making it an accessible solution for monitoring team output and project budgets.",
+                free: true,
+                url: "https://clockify.me"
+            },
+            {
+                name: "RescueTime",
+                category: "Time Tracking",
+                icon: "📊",
+                description: "RescueTime is an automatic time-tracking and productivity software that runs in the background of your computer and mobile devices. It provides detailed insights into your daily habits by categorizing the websites and applications you use, helping you identify time-wasters and focus on deep work. For remote employees, RescueTime offers personalized goals and 'Focus Sessions' to minimize distractions and build better work habits in a home environment.",
+                free: true,
+                url: "https://rescuetime.com"
+            },
+            {
+                name: "Loom",
+                category: "Screen Sharing",
+                icon: "🎥",
+                description: "Loom is an asynchronous video messaging platform that allows users to record their screen, camera, and microphone simultaneously. It enables remote workers to share information, provide feedback, and explain complex ideas through quick video messages rather than long emails or unnecessary meetings. Loom helps maintain a personal touch in digital communication and speeds up decision-making by providing a clear and expressive way to collaborate across time zones.",
+                free: true,
+                url: "https://loom.com"
+            },
+            {
+                name: "Tango",
+                category: "Screen Sharing",
+                icon: "🎯",
+                description: "Tango is a browser extension and desktop application that automatically creates step-by-step documentation while you work. It captures screenshots and writes descriptions of your actions, generating beautiful 'how-to' guides in seconds. For remote teams, Tango is an invaluable tool for onboarding new members, sharing internal processes, and building a knowledge base without the tedious task of manual documentation, saving hours of productive time every week.",
+                free: true,
+                url: "https://tango.us"
+            },
+            {
+                name: "Scribe",
+                category: "Screen Sharing",
+                icon: "✍️",
+                description: "Scribe is a tool that turns any digital process into a step-by-step guide instantly. By recording your screen as you complete a task, Scribe automatically generates a guide with screenshots and instructions that can be shared or embedded anywhere. It is perfect for remote teams needing to document workflows, train employees, or support customers, ensuring that institutional knowledge is preserved and easily accessible to everyone regardless of their location.",
+                free: true,
+                url: "https://scribehow.com"
+            },
+            {
+                name: "Google Drive",
+                category: "Cloud Storage",
+                icon: "📁",
+                description: "Google Drive is a cloud-based file storage and synchronization service that allows users to store files, sync them across devices, and share them with others. It integrates seamlessly with Google Docs, Sheets, and Slides, enabling real-time collaboration on documents and spreadsheets. For remote teams, Google Drive provides a reliable and secure central repository for all company assets, ensuring that team members can access and edit files from anywhere.",
+                free: true,
+                url: "https://google.com/drive/"
+            },
+            {
+                name: "Dropbox",
+                category: "Cloud Storage",
+                icon: "📦",
+                description: "Dropbox is a pioneer in cloud storage, providing a secure space for file hosting, sharing, and collaboration. Its 'Dropbox Paper' feature allows teams to brainstorm and create content together, while its smart sync technology ensures that files are available offline without taking up local disk space. Remote professionals rely on Dropbox for its robust version control, fast file transfers, and easy sharing capabilities, making it a staple for modern digital workflows.",
+                free: true,
+                url: "https://dropbox.com"
+            },
+            {
+                name: "Box",
+                category: "Cloud Storage",
+                icon: "📥",
+                description: "Box is a cloud content management and file sharing service designed specifically for businesses with high security and compliance requirements. It offers advanced governance features, secure collaboration tools, and deep integrations with enterprise software like Salesforce and Microsoft 365. For remote organizations in regulated industries, Box provides a secure platform to manage the entire content lifecycle while ensuring that data remains protected and accessible only to authorized users.",
+                free: true,
+                url: "https://box.com"
+            },
+            {
+                name: "Miro",
+                category: "Virtual Whiteboard",
+                icon: "🎨",
+                description: "Miro is an online collaborative whiteboarding platform that enables distributed teams to work together effectively. It offers an infinite canvas with tools for brainstorming, mind mapping, agile planning, and visual project management. Miro helps remote teams bridge the gap of physical distance by providing a shared space for visual thinking, allowing everyone to contribute ideas in real-time and stay aligned on complex projects and creative strategies.",
+                free: true,
+                url: "https://miro.com"
+            },
+            {
+                name: "FigJam",
+                category: "Virtual Whiteboard",
+                icon: "🖼️",
+                description: "FigJam is an online whiteboard for teams to ideate and brainstorm together, created by the team behind Figma. It provides a playful and intuitive environment with stickers, markers, and shapes that make collaborative sessions engaging and productive. Remote design and product teams use FigJam to map out user flows, conduct retrospective meetings, and kick off new projects, ensuring that creativity flourishes even when team members are working from different continents.",
+                free: true,
+                url: "https://figma.com/figjam/"
+            },
+            {
+                name: "Whimsical",
+                category: "Virtual Whiteboard",
+                icon: "💡",
+                description: "Whimsical is a visual workspace that combines flowcharts, wireframes, mind maps, and projects in one fast and beautiful application. It focuses on speed and simplicity, allowing remote teams to visualize their ideas and processes without getting bogged down in complex design tools. Whimsical is ideal for early-stage product planning and architectural diagrams, providing a clean and professional way to share visual information and get immediate feedback from colleagues.",
+                free: true,
+                url: "https://whimsical.com"
+            },
+            {
+                name: "NordVPN",
+                category: "VPN & Security",
+                icon: "🛡️",
+                description: "NordVPN is a leading virtual private network service that provides secure and private access to the internet for remote workers. It encrypts internet traffic and hides the user's IP address, protecting sensitive company data from hackers and surveillance on public Wi-Fi networks. With its high-speed servers and advanced security features like 'Threat Protection,' NordVPN ensures that remote employees can work safely from any location without compromising their privacy.",
+                free: false,
+                url: "https://nordvpn.com"
+            },
+            {
+                name: "ExpressVPN",
+                category: "VPN & Security",
+                icon: "🚀",
+                description: "ExpressVPN is a premium VPN service known for its blazing-fast speeds and robust security protocols. it offers servers in 94 countries, allowing remote workers to bypass geo-restrictions and access company resources securely from anywhere in the world. Its user-friendly apps and strict no-logs policy make it a top choice for professionals who prioritize privacy and performance while working remotely, providing peace of mind and reliable connectivity for all digital activities.",
+                free: false,
+                url: "https://expressvpn.com"
+            },
+            {
+                name: "1Password",
+                category: "VPN & Security",
+                icon: "🔑",
+                description: "1Password is a highly secure password manager that helps remote teams manage and share sensitive credentials safely. It stores passwords, credit card information, and secure notes in an encrypted vault, accessible with a single master password. With its 'Team Vaults' and 'Watchtower' security audits, 1Password enables organizations to enforce strong password policies and protect their digital assets from unauthorized access, ensuring that remote collaboration remains secure.",
+                free: false,
+                url: "https://1password.com"
+            },
+            {
+                name: "Bitwarden",
+                category: "VPN & Security",
+                icon: "🔓",
+                description: "Bitwarden is an open-source password management solution that offers a transparent and secure way for individuals and teams to handle their digital credentials. It provides end-to-end encryption for all stored data and supports self-hosting for organizations that require total control over their security infrastructure. Remote teams appreciate Bitwarden's affordability and cross-platform compatibility, making it an excellent choice for maintaining high security standards across a diverse range of devices.",
+                free: true,
+                url: "https://bitwarden.com"
+            },
+            {
+                name: "Around",
+                category: "Video Conferencing",
+                icon: "⭕",
+                description: "Around is a video calling tool designed specifically for the era of hybrid and remote work. It uses an innovative interface that floats on top of your windows, focusing on faces while minimizing background distractions and screen real estate usage. Around's 'Auto-Mute' and spatial audio features make it perfect for spontaneous collaboration and co-working sessions, helping remote teams feel more connected without the fatigue associated with traditional platforms.",
+                free: true,
+                url: "https://around.co"
+            },
+            {
+                name: "Mattermost",
+                category: "Team Chat",
+                icon: "💬",
+                description: "Mattermost is an open-source, self-hosted chat service that provides a secure and customizable alternative to proprietary messaging platforms. It is designed for high-security environments and technical teams, offering deep integrations with developer tools and support for complex workflows. Remote organizations that value data sovereignty and privacy use Mattermost to build a private communication hub that keeps their internal conversations and files entirely within their own infrastructure.",
+                free: true,
+                url: "https://mattermost.com"
+            },
+            {
+                name: "Jira",
+                category: "Project Management",
+                icon: "🏷️",
+                description: "Jira is the industry-standard project management software for agile software development teams. It offers powerful features for bug tracking, issue management, and sprint planning, with highly customizable workflows that adapt to any team's process. For remote engineering teams, Jira provides the structure and visibility needed to manage large-scale projects, track progress across multiple releases, and ensure that every developer knows exactly what they need to work on next.",
+                free: true,
+                url: "https://atlassian.com/software/jira"
+            },
+            {
+                name: "Discord",
+                category: "Team Chat",
+                icon: "🎮",
+                description: "Discord is a communication platform that offers persistent voice, video, and text channels, originally designed for gamers but now widely used by remote communities and startups. It provides a 'digital office' feel where team members can hop in and out of voice channels for quick discussions. Its robust API and bot ecosystem allow remote teams to build custom notifications and automated workflows, fostering a vibrant and interactive culture within a digital-first workspace.",
+                free: true,
+                url: "https://discord.com"
+            },
+            {
+                name: "Google Meet",
+                category: "Video Conferencing",
+                icon: "🤝",
+                description: "Google Meet is a secure and easy-to-use video conferencing service integrated directly into the Google Workspace ecosystem. It allows users to join meetings directly from their browser or mobile app without needing to install additional software. With features like live captions, noise cancellation, and breakout rooms, Google Meet provides a professional and reliable solution for remote teams to conduct meetings, presentations, and training sessions with colleagues.",
+                free: true,
+                url: "https://meet.google.com"
+            },
+            {
+                name: "Trello",
+                category: "Project Management",
+                icon: "📋",
+                description: "Trello is a visual collaboration tool that uses boards, lists, and cards to help teams organize and prioritize their projects in a flexible way. Its intuitive drag-and-drop interface makes it easy for remote workers to manage their daily tasks and see project status at a glance. Trello’s 'Power-Ups' allow for integration with hundreds of other apps, making it a versatile hub for managing everything from simple to-do lists to complex business operations with ease.",
+                free: true,
+                url: "https://trello.com"
+            },
+            {
+                name: "Mullvad VPN",
+                category: "VPN & Security",
+                icon: "🧅",
+                description: "Mullvad VPN is a privacy-focused VPN service that prioritizes anonymity and transparency above all else. It does not require an email address or any personal information to sign up, using a unique account number system instead. For remote professionals who are extremely privacy-conscious, Mullvad offers high-quality wireguard-based connections and a clear commitment to user data protection, ensuring that their online presence remains completely private and secure from external monitoring.",
+                free: false,
+                url: "https://mullvad.net"
+            },
+            {
+                name: "Webex",
+                category: "Video Conferencing",
+                icon: "🏢",
+                description: "Webex by Cisco is an enterprise-grade suite of collaboration tools including video conferencing, cloud calling, and messaging. It is known for its high level of security and reliability, making it a preferred choice for large corporations and government agencies. Remote teams using Webex benefit from AI-powered features like real-time translation and background noise removal, ensuring that every meeting is professional, inclusive, and productive regardless of where participants are located globally.",
+                free: true,
+                url: "https://webex.com"
+            }
+        ];
+
+        const toolsGrid = document.getElementById('toolsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterContainer = document.getElementById('filterContainer');
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderTools() {
+            const filteredTools = tools.filter(tool => {
+                const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
+                const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                     tool.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                     tool.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            toolsGrid.innerHTML = '';
+            
+            filteredTools.forEach((tool, index) => {
+                // Add an inline ad slot after every 6 tools
+                if (index > 0 && index % 6 === 0) {
+                    const adDiv = document.createElement('div');
+                    adDiv.className = 'ad-slot ad-inline';
+                    adDiv.innerHTML = 'Google AdSense - In-feed [Responsive]';
+                    toolsGrid.appendChild(adDiv);
+                }
+
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.innerHTML = `
+                    <div class="tool-header">
+                        <div class="tool-icon">${tool.icon}</div>
+                        <span class="price-tag ${tool.free ? 'free' : 'paid'}">${tool.free ? 'Free Plan' : 'Paid Only'}</span>
+                    </div>
+                    <div class="tool-info">
+                        <span class="tool-category">${tool.category}</span>
+                        <h3>${tool.name}</h3>
+                    </div>
+                    <p class="tool-description">${tool.description}</p>
+                    <div class="tool-footer">
+                        <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="visit-btn">Visit Website</a>
+                    </div>
+                `;
+                toolsGrid.appendChild(card);
+            });
+
+            if (filteredTools.length === 0) {
+                toolsGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-secondary);">No tools found matching your criteria.</div>';
+            }
+        }
+
+        // Search event
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderTools();
+        });
+
+        // Filter event
+        filterContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.dataset.category;
+                renderTools();
+            }
+        });
+
+        // Initial render
+        renderTools();
+    </script>
+</body>
+</html>
